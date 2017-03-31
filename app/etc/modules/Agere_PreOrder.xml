@@ -3,6 +3,9 @@
 		<Agere_PreOrder>
 			<active>true</active>
 			<codePool>local</codePool>
+			<depends>
+				<Agere_Service />
+			</depends>
 		</Agere_PreOrder>
 	</modules>
 </config>
