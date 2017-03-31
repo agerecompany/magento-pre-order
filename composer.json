@@ -1,0 +1,12 @@
+{
+    "name": "agere/magento-pre-order",
+    "type": "magento-module",
+    "license":"MIT Licence",
+    "description":"Magento  Pre Order Module",
+    "authors":[
+        {
+            "name":"Serhii Popov",
+            "email":"popov@agere.com.ua"
+        }
+    ]
+}
