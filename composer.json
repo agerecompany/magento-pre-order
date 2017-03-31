@@ -7,8 +7,6 @@
         "name":"Serhii Popov",
         "email":"popov@agere.com.ua"
     }],
-    "minimum-stability": "dev",
-    "prefer-stable" : true,
     "require": {
         "agere/magento-service": "dev-master"
     },
