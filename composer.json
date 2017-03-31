@@ -13,7 +13,8 @@
         "map": [
           ["app/code/local/Agere/PreOrder/", "app/code/local/Agere/PreOrder/"],
           ["app/etc/modules/Agere_PreOrder.xml", "app/etc/modules/Agere_PreOrder.xml"],
-          ["app/locale/*/template/email/agere/service/pre-order/", "app/locale/*/template/email/agere/service/pre-order/"],
+          ["app/locale/uk_UA/template/email/agere/service/pre-order/", "app/locale/uk_UA/template/email/agere/service/pre-order/"],
+          ["app/locale/ru_RU/template/email/agere/service/pre-order/", "app/locale/ru_RU/template/email/agere/service/pre-order/"],
           ["app/design/frontend/base/default/layout/agere/pre-order.xml", "app/design/frontend/base/default/layout/agere/pre-order.xml"],
           ["app/design/frontend/base/default/template/agere/service/pre-order", "app/design/frontend/base/default/template/agere/service/pre-order"],
           ["app/design/frontend/base/default/template/agere/catalog/product/view/addtocart.phtml", "app/design/frontend/base/default/template/agere/catalog/product/view/addtocart.phtml"]
