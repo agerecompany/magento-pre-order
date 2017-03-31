@@ -1,0 +1,13 @@
+<!--@subject Pre Order. Site: {{var website.getName()}} @-->
+<!--@vars
+{
+"var website":"Website object",
+"var data.referUrl":"Refer Url",
+}
+@-->
+Оформлено пред заказ на сайте {{var website.getName()}}
+Ссылка на карточку товара: {{var data.getData('referUrl')}}
+Имя клиента: {{var data.getData('name')}}
+Мобильный телефон: {{var data.getData('telephone')}}
+Email: {{var data.getData('email')}}
+Комментарий: {{var data.getData('comment')}}

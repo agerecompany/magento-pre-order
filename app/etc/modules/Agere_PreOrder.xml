@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<Agere_PreOrder>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Agere_PreOrder>
+	</modules>
+</config>

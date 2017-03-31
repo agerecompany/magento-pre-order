@@ -1,1 +1,130 @@
 <?xml version="1.0"?>
+<config>
+	<modules>
+		<Agere_PreOrder>
+			<version>0.1.0</version>
+		</Agere_PreOrder>
+	</modules>
+
+	<frontend>
+		<routers>
+			<agere_preOrder>
+				<use>standard</use>
+				<args>
+					<module>Agere_PreOrder</module>
+					<frontName>pre-order</frontName>
+				</args>
+			</agere_preOrder>
+		</routers>
+
+		<layout>
+			<updates>
+				<agere_preOrder>
+					<file>agere/pre-order.xml</file>
+				</agere_preOrder>
+			</updates>
+		</layout>
+
+		<translate>
+			<modules>
+				<Agere_PreOrder>
+					<files>
+						<default>Agere_PreOrder.csv</default>
+					</files>
+				</Agere_PreOrder>
+			</modules>
+		</translate>
+	</frontend>
+
+	<!-- is important place this code (<adminhtml/>) in config.xml if you wand place this in adminhtml.xml nothing happen -->
+	<adminhtml>
+		<layout>
+			<updates>
+				<agere_preOrder>
+					<!--
+					We again keep a nice naming convention and make our module upgrade proof by placing it in a separate folder
+					- Since we are in the adminhtml node, this will look for the XML file in the app/design/adminhtml/default/default root folder
+					-->
+					<file>agere/pre-order.xml</file>
+				</agere_preOrder>
+			</updates>
+		</layout>
+	</adminhtml>
+
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<!-- This is how we load our Adminhtml controllers -->
+					<modules>
+						<agere_preOrder before="Mage_Adminhtml">Agere_PreOrder_Adminhtml</agere_preOrder>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+
+	<global>
+		<helpers>
+			<agere_preOrder>
+				<!-- This is where we define our helper directory -->
+				<class>Agere_PreOrder_Helper</class>
+			</agere_preOrder>
+		</helpers>
+		<blocks>
+			<agere_preOrder>
+				<!-- Set a block definition and lookup directory -->
+				<class>Agere_PreOrder_Block</class>
+			</agere_preOrder>
+		</blocks>
+		<models>
+			<agere_preOrder>
+				<!-- This is where we define our model directory -->
+				<class>Agere_PreOrder_Model</class>
+				<!-- Define a resource to create a custom table -->
+				<resourceModel>agere_preOrder_resource</resourceModel>
+			</agere_preOrder>
+			<!-- Here's our resource model we'll use to create a database table -->
+			<agere_preOrder_resource>
+				<class>Agere_PreOrder_Model_Resource</class>
+				<entities>
+					<!-- Let's define our table, we'll call it with the baz name, but the real table is foo_bar_baz -->
+					<!-- After we define our entity, we can call it with our model by calling foo_bar/baz -->
+					<!--<preOrder>
+						<table>agere_pre_order</table>
+					</preOrder>-->
+				</entities>
+			</agere_preOrder_resource>
+		</models>
+		<!-- And finally we define our resource setup script -->
+		<resources>
+			<agere_preOrder_setup>
+				<setup>
+					<module>Agere_PreOrder</module>
+				</setup>
+			</agere_preOrder_setup>
+		</resources>
+
+		<template>
+			<email>
+				<agere_preOrder_mail_email_template translate="label" module="agere_preOrder">
+					<label>Pre Order</label>
+					<file>agere/service/pre-order/form.html</file>
+					<type>html</type>
+				</agere_preOrder_mail_email_template>
+			</email>
+		</template>
+	</global>
+
+	<default>
+		<agere_preOrder>
+			<mail>
+				<enabled>0</enabled>
+				<recipient_email><![CDATA[hello@example.com]]></recipient_email>
+				<sender_email_identity>general</sender_email_identity>
+				<email_template>agere_preOrder_mail_email_template</email_template>
+			</mail>
+		</agere_preOrder>
+	</default>
+
+</config>

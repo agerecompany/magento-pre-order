@@ -1,0 +1,40 @@
+<div class="pre-order-block">
+    <form action="<?= $this->getUrl('pre-order/index/create') ?>" id="pre-order-form" method="post">
+        <div class="no-display">
+            <input name="referUrl" id="refer-url" value="<?= Mage::app()->getRequest()->get('referUrl') ?>" type="hidden">
+        </div>
+        <h2 class="legend">Оставить предзаказ</h2>
+        <div class="row-fluid">
+            <ul class="form-list col-sm-12">
+                <li>
+                    <label for="name" class="required"><em>*</em>Имя</label>
+                    <div class="input-box">
+                        <input name="name" id="name" title="Имя" value="" class="input-text required-entry" type="text">
+                    </div>
+                </li>
+                <li>
+                    <label for="email" class="required"><em>*</em>Электронная почта (email)</label>
+                    <div class="input-box">
+                        <input name="email" id="email" title="Электронная почта (email)" value="" class="input-text required-entry validate-email" type="text">
+                    </div>
+                </li>
+                <li>
+                    <label for="telephone" class="required"><em>*</em>Телефон</label>
+                    <div class="input-box">
+                        <input name="telephone" id="telephone" title="Телефон" value="" class="input-text required-entry" type="text">
+                    </div>
+                </li>
+                <li>
+                    <label for="comment">Комментарий</label>
+                    <div class="input-box input-textarea">
+                        <textarea name="comment" id="comment" title="Комментарий" class="input-text" cols="5" rows="3" placeholder="Комментарий"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <input name="hideit" id="hideit" value="" style="display:none !important;" type="text">
+                    <button type="submit" title="Отправить" class="button"><span><span>Отправить</span></span></button>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

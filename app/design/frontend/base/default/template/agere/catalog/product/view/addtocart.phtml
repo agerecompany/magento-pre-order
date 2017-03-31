@@ -1,0 +1,121 @@
+<?php $_product = $this->getProduct(); ?>
+<?php $buttonTitle = $this->__('Pre Order'); ?>
+<?php if ($_product->isSaleable()) : ?>
+    <?php $jsOptions = json_encode(array(
+        'product' => $_product->getId(),
+        'mode' => Mage::getStoreConfig('agere_preOrder/settings/mode'),
+        'fancybox' => array(
+            'type' => "ajax",
+            'href' => $this->getUrl('pre-order/index/getForm'),
+        ),
+    )); ?>
+	<div class="add-to-cart">
+
+        <?php /*<a class="service" data-fancybox-type="ajax" href="<?php echo $this->getUrl('service/writeSto/getForm') ?>"><?php echo $this->__('Write to service station') ?></a>*/ ?>
+
+		<button type="button"
+		        title="<?php echo $buttonTitle ?>"
+		        class="button btn-cart"
+		        data-options='<?php echo $jsOptions ?>'
+		        <?php /*data-fancybox-type="ajax"
+		        //href="<?php echo $this->getUrl('pre-order/index/getForm') ?>" */ ?>
+		>
+			<span><span><i class="icon-cart"></i><?php echo $buttonTitle ?></span></span>
+		</button>
+        <?php echo $this->getChildHtml('', true, true) ?>
+	</div>
+<?php endif; ?>
+
+<script>
+	var AgerePreOrder = {
+		elm: null,
+
+		attachEvents: function() {
+			this.attachValidation();
+		},
+
+		attachValidation: function () {
+			/*afterLoad
+			beforeClose : function( instance, current, e ) {
+				if ( $('#my-field').val() == '' ) {
+					return false;
+				}
+			}
+			jQuery(document).on('onComplete.fb', function( e, instance, slide ) {
+				// Your code goes here
+			});*/
+		},
+
+		getProductId: function() {
+			return $(this).data('product');
+		},
+
+		orderSimple: function() {
+
+			this.elm.fancybox.open();
+
+			console.log(55555);
+		},
+
+		init: function() {
+			var self = this;
+			// exclude to general Service module
+			var fancyOptions = {
+				'ajax': {cache: true, dataType: 'html'},
+				'minWidth': 300,
+				'afterShow': function (prev, curr) {
+					var preOrderForm = new VarienForm('pre-order-form');
+					console.log(preOrderForm);
+				},
+				'beforeLoad': function() {
+					this.ajax.data = {
+						'referUrl': window.location.href
+					};
+				},
+			};
+
+			jQuery('.add-to-cart .btn-cart').click(function() {
+				self.elm = jQuery(this);
+				var options = jQuery.extend(true, fancyOptions, self.elm.data('options').fancybox);
+				console.log(options);
+				// @see http://stackoverflow.com/a/13948085/1335142
+				jQuery.fancybox.open([
+					options
+				], {
+					padding : 0
+				});
+
+
+			});
+
+			return;
+
+
+
+
+			var self = this;
+			jQuery('add-to-cart .pre-order').click(function () {
+				self.elm = jQuery(this);
+				var options = self.elm.data('options');
+
+				//return;
+
+				var productId = options.product;
+				var mode = 'order' + self.capitalizeFirstLetter(options.mode);
+
+				console.log(mode);
+
+				self[mode]();
+				//self.elm = null;
+			});
+		},
+
+		capitalizeFirstLetter: function (string) {
+			return string[0].toUpperCase() + string.slice(1);
+		}
+	};
+
+	jQuery(document).ready(function($) {
+		AgerePreOrder.init();
+	});
+</script>

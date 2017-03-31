@@ -1,0 +1,14 @@
+<!--@subject Pre Order. Site: {{var website.getName()}} @-->
+<!--@vars
+{
+"var website":"Website object",
+"var data.referUrl":"Refer Url",
+}
+@-->
+Оформлено перед замовлення на сайті {{var website.getName()}}
+
+Посилання на карточку товару: {{var data.getData('referUrl')}}
+Ім'я клієнта: {{var data.getData('name')}}
+Мобільний телефон: {{var data.getData('telephone')}}
+Email: {{var data.getData('email')}}
+Коментар: {{var data.getData('comment')}}

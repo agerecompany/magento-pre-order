@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<layout version="1.0.1">
+    <default>
+        <reference name="head">
+            <!--<action method="addItem"><type>skin_js</type><name>agere/service/js/service-anketa.js</name></action>-->
+        </reference>
+
+	    <!--<reference name="footer">-->
+		    <!--<action method="setTemplate">-->
+			    <!--<template helper="agere_preOrder/getAddToCartTemplate" />-->
+		    <!--</action>-->
+	    <!--</reference>-->
+    </default>
+
+	<catalog_product_view>
+		<!--<reference name="product.info.addto">
+			<action method="setTemplate" ifconfig="ajaxcart/addtolinks/enableproduct"><template>ajaxcart/catalog/product/view/addto.phtml</template></action>
+		</reference>-->
+		<reference name="product.info.addtocart">
+			<action method="setTemplate" ifconfig="agere_preOrder/settings/enable">
+				<template helper="agere_preOrder/getAddToCartTemplate" />
+			</action>
+		</reference>
+
+	</catalog_product_view>
+</layout>
