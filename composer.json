@@ -8,5 +8,10 @@
             "name":"Serhii Popov",
             "email":"popov@agere.com.ua"
         }
-    ]
+    ],
+    "extra": {
+        "map": [
+            ["app/code/local/Agere/PreOrder/", "app/code/local/Agere/PreOrder/"]
+        ]
+    }
 }
