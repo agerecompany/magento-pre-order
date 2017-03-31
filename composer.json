@@ -3,11 +3,18 @@
     "type": "magento-module",
     "license":"MIT Licence",
     "description":"Magento  Pre Order Module",
-    "authors":[
-        {
-            "name":"Serhii Popov",
-            "email":"popov@agere.com.ua"
-        }
+    "authors":[{
+        "name":"Serhii Popov",
+        "email":"popov@agere.com.ua"
+    }],
+    "require": {
+        "agere/magento-service": "dev-master"
+    },
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/agerecompany/magento-service.git"
+      }
     ],
     "extra": {
         "map": [
