@@ -4,12 +4,6 @@
         <reference name="head">
             <!--<action method="addItem"><type>skin_js</type><name>agere/service/js/service-anketa.js</name></action>-->
         </reference>
-
-	    <!--<reference name="footer">-->
-		    <!--<action method="setTemplate">-->
-			    <!--<template helper="agere_preOrder/getAddToCartTemplate" />-->
-		    <!--</action>-->
-	    <!--</reference>-->
     </default>
 
 	<catalog_product_view>

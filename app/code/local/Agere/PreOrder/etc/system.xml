@@ -34,6 +34,15 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</enable>
+						<categories translate="label comment">
+							<label>Categories</label>
+							<comment>Categories ids (by comma) to which enable "Pre Order" button</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>15</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</categories>
 						<mode translate="label comment">
 							<label>Mode</label>
 							<comment>IMPORTANT! Now implemented only mail</comment>

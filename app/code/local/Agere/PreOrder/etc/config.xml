@@ -27,11 +27,11 @@
 
 		<translate>
 			<modules>
-				<Agere_PreOrder>
+				<agere_preOrder>
 					<files>
 						<default>Agere_PreOrder.csv</default>
 					</files>
-				</Agere_PreOrder>
+				</agere_preOrder>
 			</modules>
 		</translate>
 	</frontend>

@@ -24,6 +24,8 @@
           ["app/design/frontend/base/default/template/agere/service/pre-order", "app/design/frontend/base/default/template/agere/service/pre-order"],
           ["app/design/frontend/base/default/template/agere/catalog/product/view/addtocart.phtml", "app/design/frontend/base/default/template/agere/catalog/product/view/addtocart.phtml"],
           ["skin/frontend/base/default/agere/pre-order/", "skin/frontend/base/default/agere/pre-order/"],
+          ["app/locale/uk_UA/Agere_PreOrder.csv", "app/locale/uk_UA/Agere_PreOrder.csv"],
+          ["app/locale/ru_RU/Agere_PreOrder.csv", "app/locale/ru_RU/Agere_PreOrder.csv"],
           ["app/locale/uk_UA/template/email/agere/service/pre-order/", "app/locale/uk_UA/template/email/agere/service/pre-order/"],
           ["app/locale/ru_RU/template/email/agere/service/pre-order/", "app/locale/ru_RU/template/email/agere/service/pre-order/"]
         ]
